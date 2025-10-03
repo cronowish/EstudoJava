@@ -5,7 +5,7 @@ Versão 1.2 Commit
 
 exemplo de projeto Java um pouco mais complexo, usando várias classes, herança, interfaces e boas práticas.
 É um sistema simples de biblioteca com cadastro de usuários, livros, empréstimos e relatórios.
-Você pode estudar esse código para entender:
+
 Criação de várias classes em pacotes diferentes.
 Uso de interfaces e herança.
 Polimorfismo.
@@ -54,3 +54,5 @@ public class Main {
         RelatorioService.gerarRelatorioEmprestimos(biblioteca);
     }
 }
+
+//biblioteca
