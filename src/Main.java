@@ -1,15 +1,42 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
+import models.*;
+import services.*;
+import exceptions.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        BibliotecaService biblioteca = new BibliotecaService();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Criando usuários
+        Usuario u1 = new Estudante("Ana", "ana@email.com");
+        Usuario u2 = new Professor("Carlos", "carlos@email.com");
+
+        // Criando livros
+        Livro l1 = new Livro("Java Básico", "José Silva", 3);
+        Livro l2 = new Livro("Padrões de Projeto", "Gamma et al.", 1);
+
+        // Adicionando no sistema
+        biblioteca.adicionarUsuario(u1);
+        biblioteca.adicionarUsuario(u2);
+        biblioteca.adicionarLivro(l1);
+        biblioteca.adicionarLivro(l2);
+
+        try {
+            // Empréstimos
+            biblioteca.realizarEmprestimo(u1, l1);
+            biblioteca.realizarEmprestimo(u2, l2);
+
+            // Esse vai falhar porque só tem 1 exemplar
+            biblioteca.realizarEmprestimo(u1, l2);
+
+        } catch (LivroIndisponivelException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
+
+        // Relatórios
+        RelatorioService.gerarRelatorioUsuarios(biblioteca);
+        RelatorioService.gerarRelatorioLivros(biblioteca);
+        RelatorioService.gerarRelatorioEmprestimos(biblioteca);
     }
 }
