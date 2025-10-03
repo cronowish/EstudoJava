@@ -1,7 +1,7 @@
 
 
 /*
-Versão 1.1
+Versão 1.2 Commit
 
 exemplo de projeto Java um pouco mais complexo, usando várias classes, herança, interfaces e boas práticas.
 É um sistema simples de biblioteca com cadastro de usuários, livros, empréstimos e relatórios.
