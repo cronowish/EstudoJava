@@ -1,6 +1,8 @@
 
 
 /*
+Versão 1.1
+
 exemplo de projeto Java um pouco mais complexo, usando várias classes, herança, interfaces e boas práticas.
 É um sistema simples de biblioteca com cadastro de usuários, livros, empréstimos e relatórios.
 Você pode estudar esse código para entender:
